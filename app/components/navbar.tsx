@@ -23,7 +23,7 @@ export function Navbar() {
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="absolute left-2.5 top-2 bottom-2 z-50 flex h-[calc(100vh_-_1rem)] flex-col items-center justify-between rounded-[16px] bg-[var(--primaryBG)] mr-3 p-3">
+    <nav className="absolute z-50 flex h-[calc(100vh_-_1rem)] flex-col items-center justify-between rounded-[16px] bg-[var(--primaryBG)] m-2 mr-3 p-3">
       <div className="flex items-center justify-center">
         <JobsiteLogo className="h-11 w-11" />
         <span className="sr-only">Jobsite</span>

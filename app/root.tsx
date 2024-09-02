@@ -18,8 +18,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <Navbar />
+        <div className="flex">
+          <Navbar />
+          <main className="flex-1 m-2 ml-[84px]">{children}</main>
+        </div>
+
         <ScrollRestoration />
         <Scripts />
       </body>
