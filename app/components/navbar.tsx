@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "./ui/dropdown-menu";
-import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import { Avatar, AvatarFallback } from "./ui/avatar";
 import { HomeSVG, Bookmarks, CogSVG, SearchSVG } from "../assets/icons";
 import { JobsiteLogo } from "../assets/JobsiteLogo";
 
@@ -23,7 +23,7 @@ export function Navbar() {
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="relative left-2.5 top-2 bottom-2 z-50 flex h-[calc(100vh_-_1rem)]  flex-col items-center justify-between rounded-[16px] bg-[var(--card-primary)] mr-3 p-3">
+    <nav className="absolute left-2.5 top-2 bottom-2 z-50 flex h-[calc(100vh_-_1rem)] flex-col items-center justify-between rounded-[16px] bg-[var(--primaryBG)] mr-3 p-3">
       <div className="flex items-center justify-center">
         <JobsiteLogo className="h-11 w-11" />
         <span className="sr-only">Jobsite</span>
@@ -33,9 +33,9 @@ export function Navbar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant="ghost"
+                variant="default"
                 size="icon"
-                className={isActivePage("Home") ? "bg-accent " : ""}
+                className={isActivePage("Home") ? "secondaryBG" : ""}
                 onClick={() => {
                   setCurrentPage("Home");
                   navigate("/home");
@@ -49,9 +49,9 @@ export function Navbar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant="ghost"
+                variant="default"
                 size="icon"
-                className={isActivePage("Search") ? "bg-accent" : ""}
+                className={isActivePage("Search") ? "secondaryBG" : ""}
                 onClick={() => {
                   setCurrentPage("Search");
                   navigate("/search");
@@ -65,7 +65,7 @@ export function Navbar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant="ghost"
+                variant="default"
                 size="icon"
                 className={
                   isActivePage("Bookmarks")
@@ -85,7 +85,7 @@ export function Navbar() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant="ghost"
+                variant="default"
                 size="icon"
                 className={
                   isActivePage("Settings")

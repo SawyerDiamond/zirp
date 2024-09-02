@@ -5,7 +5,8 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --card: 0 0% 100%;
+    --primaryBG: #0c162acc;
+    --secondaryBG: #0c1e3acc;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -64,7 +65,7 @@
   }
   body {
     color: white;
-    background: linear-gradient(66deg, #0b2243, #141131);
+    background: linear-gradient(120deg, #0b2243, #141131);
     min-height: 100vh;
   }
 }

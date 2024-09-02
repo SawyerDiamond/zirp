@@ -11,7 +11,9 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <Navbar />
+      <div>
+        <h1>Jobsite</h1>
+      </div>
     </>
   );
 }
