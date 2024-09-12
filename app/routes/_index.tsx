@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-
+import { Navbar } from "~/components/navbar";
+import { SearchBox } from "~/components/searchbox";
 export const meta: MetaFunction = () => {
   return [
     { title: "Jobsite" },
@@ -11,11 +12,13 @@ export default function Index() {
   return (
     <>
       <div className="w-full h-full">
-        <div className="gradient-rectangle w-full flex z-10 h-60 rounded-[16px] backdrop-blur-md flex-1 items-center justify-center">
-          <h1 className="text-7xl text-white nats-font">
+        <div className="gradient-rectangle w-full flex flex-col z-10 h-60 rounded-2xl flex-1 items-start pl-10 justify-center">
+          <h1 className="text-7xl text-white nats-font ">
             Let's Find Your Dream Job
           </h1>
+          <SearchBox onSearch={() => {}} />
         </div>
+        <Navbar />
       </div>
     </>
   );

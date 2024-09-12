@@ -1,13 +1,7 @@
-interface Props {
-  width: number;
-  height: number;
-}
-export function JobSVG({ width, height, ...props }: Props) {
+export const JobSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 24 24`}
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}>
@@ -31,4 +25,4 @@ export function JobSVG({ width, height, ...props }: Props) {
       />
     </svg>
   );
-}
+};
