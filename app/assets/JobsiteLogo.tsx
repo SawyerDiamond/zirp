@@ -2,45 +2,68 @@ export function JobsiteLogo({ className, ...props }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="100"
-      height="100"
-      viewBox="0 0 100 100"
+      width="70"
+      height="82"
+      viewBox="0 0 70 82"
       fill="none"
       className={className}>
-      <rect width="100" height="100" rx="26" fill="url(#paint0_linear_206_5)" />
-      <path
-        d="M31 58.1977C31.2869 68.9478 39.7027 77 50 77C60.2973 77 68.7131 68.9478 69 58.1977L60.3143 58.1977C60.0129 63.7096 55.3197 68.4535 50 68.4535C44.6803 68.4535 39.9871 63.7096 39.6857 58.1977L31 58.1977Z"
-        fill="white"
-      />
-      <path
-        d="M60.3143 28L69 28L69 58.1977L60.3143 58.1977L60.3143 28Z"
-        fill="white"
-      />
-      <path
-        d="M39.1429 37.686L39.1429 28L69 28L69 37.686L39.1429 37.686Z"
-        fill="white"
-      />
-      <path
-        d="M60.3143 37.686L60.3143 28L69 28L69 37.686L60.3143 37.686Z"
-        fill="white"
-      />
-      <path
-        d="M60.3143 58.1977L60.3143 48.5116L69 48.5116L69 58.1977L60.3143 58.1977Z"
-        fill="white"
-      />
+      <g filter="url(#filter0_d_484_6)">
+        <path
+          d="M12 50.8766C12.2869 61.6267 20.7027 69.679 31 69.679C41.2973 69.679 49.7131 61.6267 50 50.8766L41.3143 50.8766C41.0129 56.3885 36.3197 61.1324 31 61.1324C25.6803 61.1324 20.9871 56.3885 20.6857 50.8766L12 50.8766Z"
+          fill="white"
+        />
+        <path
+          d="M41.3143 20.679L50 20.679L50 50.8766L41.3143 50.8766L41.3143 20.679Z"
+          fill="white"
+        />
+        <path
+          d="M20.1429 30.365L20.1429 20.679L50 20.679L50 30.365L20.1429 30.365Z"
+          fill="white"
+        />
+        <path
+          d="M41.3143 30.365L41.3143 20.679L50 20.679L50 30.365L41.3143 30.365Z"
+          fill="white"
+        />
+        <path
+          d="M41.3143 50.8766L41.3143 41.1906L50 41.1906L50 50.8766L41.3143 50.8766Z"
+          fill="white"
+        />
+      </g>
       <defs>
-        <linearGradient
-          id="paint0_linear_206_5"
-          x1="7"
-          y1="10.5"
-          x2="100"
-          y2="105"
-          gradientUnits="userSpaceOnUse">
-          <stop stopColor="#51A2E0" />
-          <stop offset="0.31" stopColor="#1785EC" />
-          <stop offset="0.7" stopColor="#3220BC" />
-          <stop offset="1" stopColor="#981FEB" />
-        </linearGradient>
+        <filter
+          id="filter0_d_484_6"
+          x="0"
+          y="0.678955"
+          width="70"
+          height="81"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            result="hardAlpha"
+          />
+          <feOffset dx="4" dy="-4" />
+          <feGaussianBlur stdDeviation="8" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+          />
+          <feBlend
+            mode="normal"
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_484_6"
+          />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="effect1_dropShadow_484_6"
+            result="shape"
+          />
+        </filter>
       </defs>
     </svg>
   );

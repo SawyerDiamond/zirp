@@ -15,10 +15,12 @@ export async function getSearch(jobTitle: string, location: string) {
       "x-rapidapi-host": "jsearch.p.rapidapi.com",
     },
   };
+
   try {
     const response = await axios.request(options);
-    console.log(response.data);
+    return response.data;
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching job search results:", error);
+    throw error;
   }
 }

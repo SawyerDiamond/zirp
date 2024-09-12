@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/button";
 import { LocationSVG, SubmitSVG, JobSVG } from "~/assets/icons/";
 import { getSearch } from "~/api/api";
 type SearchBoxProps = {
-  onSearch: (jobTitle: string, location: string) => void;
+  onSearch: (results: any) => void;
 };
 export function SearchBox({ onSearch }: SearchBoxProps) {
   const [jobTitle, setJobTitle] = useState("");
@@ -33,7 +33,7 @@ export function SearchBox({ onSearch }: SearchBoxProps) {
           placeholder="Job Title"
           icon={JobSVG}
           value={jobTitle}
-          className="w-96 flex-1  backdrop-blur-sm"
+          className="w-96 flex-1 backdrop-blur-sm"
           onChange={(e) => setJobTitle(e.target.value)}
         />
         <Input

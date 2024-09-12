@@ -15,7 +15,7 @@ export function Navbar() {
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="absolute card-shadow z-50 flex h-[65vh] flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] m-3 ml-0 mt-2 p-3">
+    <nav className="fixed card-shadow z-50 flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] mr-3 mb-3 mt-3 p-3 h-[63.25vh]">
       {" "}
       <div className="flex flex-col items-center gap-10">
         <TooltipProvider>
@@ -78,7 +78,7 @@ export function Navbar() {
         </TooltipProvider>
       </div>
       <div className="flex items-center justify-center">
-        <JobsiteLogo className="h-11 w-11" />
+        <JobsiteLogo className="h-9 w-9" />
         <span className="sr-only">Jobsite</span>
       </div>
     </nav>

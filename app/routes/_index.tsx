@@ -11,8 +11,8 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <div className="w-full h-full">
-        <div className="gradient-rectangle w-full flex flex-col z-10 h-60 rounded-2xl flex-1 items-start pl-10 justify-center">
+      <div className="m-3 overflow-hidden">
+        <div className="gradient-rectangle card-shadow w-full flex flex-col z-10 h-60 rounded-2xl flex-1 items-start pl-10 justify-center">
           <h1 className="text-7xl text-white nats-font ">
             Let's Find Your Dream Job
           </h1>
