@@ -47,9 +47,9 @@ export function SearchBox({ onSearch }: SearchBoxProps) {
         />
         <Button
           type="submit"
-          className="rounded-xl aspect-square"
+          className="rounded-xl bg-[var(--primaryBG)] aspect-square"
           disabled={isLoading}>
-          {isLoading ? "Searching..." : <SubmitSVG className="h-5 w-5 p-0" />}
+          {isLoading ? "Searching..." : <SubmitSVG className="h-4 w-4" />}
         </Button>
       </div>
     </form>

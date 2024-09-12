@@ -13,7 +13,7 @@ export default function Index() {
     <>
       <div className="m-3 overflow-hidden">
         <div className="gradient-rectangle card-shadow w-full flex flex-col z-10 h-60 rounded-2xl flex-1 items-start pl-10 justify-center">
-          <h1 className="text-7xl text-white nats-font ">
+          <h1 className="text-7xl mb-1 text-white nats-font ">
             Let's Find Your Dream Job
           </h1>
           <SearchBox onSearch={() => {}} />

@@ -47,6 +47,7 @@ h1 {
   }
   body {
     color: white;
+    font-family: "NATS", sans-serif;
     background: linear-gradient(120deg, #0b2243, #141131);
     min-height: 100vh;
   }
