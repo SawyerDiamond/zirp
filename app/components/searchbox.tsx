@@ -5,8 +5,9 @@ import { LocationSVG, SubmitSVG, JobSVG } from "~/assets/icons/";
 import { getSearch } from "~/api/api";
 type SearchBoxProps = {
   onSearch: (results: any) => void;
+  className?: string;
 };
-export function SearchBox({ onSearch }: SearchBoxProps) {
+export function SearchBox({ onSearch, className }: SearchBoxProps) {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -26,14 +27,14 @@ export function SearchBox({ onSearch }: SearchBoxProps) {
 
   return (
     <form onSubmit={handleSubmit} className="flex z-50">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 ">
         <Input
           name="Search"
           type="search"
           placeholder="Job Title"
           icon={JobSVG}
           value={jobTitle}
-          className="w-96 flex-1 backdrop-blur-sm"
+          className="w-96 flex-1 backdrop-blur-sm element-shadow"
           onChange={(e) => setJobTitle(e.target.value)}
         />
         <Input
@@ -42,12 +43,12 @@ export function SearchBox({ onSearch }: SearchBoxProps) {
           placeholder="Location"
           icon={LocationSVG}
           value={location}
-          className="w-64 flex-1  backdrop-blur-sm"
+          className="w-64 flex-1  backdrop-blur-sm element-shadow"
           onChange={(e) => setLocation(e.target.value)}
         />
         <Button
           type="submit"
-          className="rounded-xl bg-[var(--primaryBG)] aspect-square"
+          className="rounded-xl bg-[var(--primaryBG)] aspect-square element-shadow"
           disabled={isLoading}>
           {isLoading ? "Searching..." : <SubmitSVG className="h-4 w-4" />}
         </Button>

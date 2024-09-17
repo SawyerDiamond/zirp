@@ -15,9 +15,9 @@ export function Navbar() {
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="fixed card-shadow z-50 flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] mr-3 mb-3 mt-3 p-3 h-[63.25vh]">
+    <nav className="fixed card-shadow z-50 flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] backdrop-blur-md mr-3 mb-3 mt-3 p-3 h-[63.25vh]">
       {" "}
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center mt-5 gap-10">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
