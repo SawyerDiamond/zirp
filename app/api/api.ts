@@ -11,7 +11,10 @@ export async function getSearch(jobTitle: string, location: string) {
       date_posted: "all",
     },
     headers: {
-      "x-rapidapi-key": process.env.JSEARCH_API_KEY,
+      "x-rapidapi-key":
+        typeof window !== "undefined"
+          ? window.env?.JSEARCH_API_KEY
+          : process.env.JSEARCH_API_KEY,
       "x-rapidapi-host": "jsearch.p.rapidapi.com",
     },
   };

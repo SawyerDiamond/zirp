@@ -15,6 +15,7 @@ export function SearchBox({ onSearch, className }: SearchBoxProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    console.log(jobTitle, location);
     try {
       const results = await getSearch(jobTitle, location);
       onSearch(results);

@@ -10,14 +10,16 @@ import { Button } from "./ui/button";
 import { HomeSVG, Bookmarks, CogSVG } from "../assets/icons";
 import { JobsiteLogo } from "../assets/JobsiteLogo";
 
-export function Navbar() {
+type NavbarProps = {
+  className?: string;
+};
+export function Navbar({ className }: NavbarProps) {
   const [currentPage, setCurrentPage] = useState("Home");
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="fixed card-shadow z-50 flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] backdrop-blur-md mr-3 mb-3 mt-3 p-3 h-[63.25vh]">
-      {" "}
-      <div className="flex flex-col items-center mt-5 gap-10">
+    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] backdrop-blur-md p-3 w-16 gap-[25vh]">
+      <div className="flex flex-col items-center mt-4 gap-10">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -79,7 +81,7 @@ export function Navbar() {
       </div>
       <div className="flex items-center justify-center">
         <JobsiteLogo className="h-9 w-9" />
-        <span className="sr-only">Jobsite</span>
+        <span className="sr-only">Jobsite Logo</span>
       </div>
     </nav>
   );

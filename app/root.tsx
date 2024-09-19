@@ -1,30 +1,42 @@
+import { json } from "@remix-run/node";
 import {
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import "./tailwind.css";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const loader = async () => {
+  return json({
+    ENV: {
+      JSEARCH_API_KEY: process.env.JSEARCH_API_KEY,
+    },
+  });
+};
+
+export default function App() {
+  const data = useLoaderData<typeof loader>();
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
-        <main className="h-full overflow-hidden">{children}</main>
+      <body>
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.env = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
