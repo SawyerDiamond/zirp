@@ -18,7 +18,7 @@ export function Navbar({ className }: NavbarProps) {
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] backdrop-blur-md p-3 w-16 gap-[25vh]">
+    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] overflow-hidden backdrop-blur-md p-3 w-16 gap-[25vh] h-auto">
       <div className="flex flex-col items-center mt-4 gap-10">
         <TooltipProvider>
           <Tooltip>

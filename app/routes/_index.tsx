@@ -22,14 +22,12 @@ export default function Index() {
   };
 
   return (
-    <div className="h-screen overflow-hidden flex flex-col gap-4 m-4">
+    <div className="h-[98vh] flex flex-col gap-[2vh] pl-[2vh] pr-[2vh]">
+      <div></div>
       <TopBox onSearch={handleSearch} />
-      <div className="flex-1 grid grid-cols-[auto,1fr] gap-4 overflow-hidden">
-        <div className="overflow-hidden">
-          <Navbar />
-        </div>
-
-        <div className="overflow-y-scroll">
+      <div className="flex-1 grid grid-cols-[auto,1fr] gap-4 ">
+        <Navbar />
+        <div className="overflow-y-auto">
           <JobList jobs={searchResults} />
         </div>
       </div>
