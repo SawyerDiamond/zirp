@@ -14,7 +14,7 @@ h1 {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --primaryBG: #0c162acc;
+    --primaryBG: #0c162a94;
     --secondaryBG: #0c1e3acc;
     --primaryBorder: #102143;
     --secondaryBorder: #425b8c59;

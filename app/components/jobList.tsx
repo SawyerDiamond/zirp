@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { JobItem } from "~/types/job";
-
+import { Pagination } from "~/components/ui/pagination";
 type JobListProps = {
   jobs: JobItem[];
   className?: string;
@@ -21,7 +21,7 @@ export function JobList({ jobs, className }: JobListProps) {
   const jobsToDisplay = jobs.length > 0 ? jobs : placeholderJobs;
 
   return (
-    <div className="h-full overflow-y-scroll">
+    <div className="h-full">
       <div className="flex flex-col gap-4 h-[64vh]">
         {jobsToDisplay.map((job, index) => (
           <Card

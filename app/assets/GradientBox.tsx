@@ -24,7 +24,6 @@ export function GradientBox({
           <path
             d="M0 30C0 13.4315 13.4315 0 30 0H2470C2486.57 0 2500 13.4315 2500 30V420C2500 436.569 2486.57 450 2470 450H30.0001C13.4315 450 0 436.569 0 420V30Z"
             fill="url(#paint0_linear_587_19)"
-            filter="url(#noise)"
           />
           <path
             d="M0 30C0 13.4315 13.4315 0 30 0H2470C2486.57 0 2500 13.4315 2500 30V420C2500 436.569 2486.57 450 2470 450H30.0001C13.4315 450 0 436.569 0 420V30Z"
@@ -109,68 +108,7 @@ export function GradientBox({
             <stop offset="0.375" stopColor="#0261FF" />
             <stop offset="1" stopColor="#0261FF" stopOpacity="0" />
           </radialGradient>
-          <filter
-            id="noise"
-            x="0%"
-            y="0%"
-            width="100%"
-            height="100%"
-            className="rounded-2xl">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.5"
-              numOctaves="3"
-              stitchTiles="stitch"
-              result="noise"
-            />
-            <feColorMatrix
-              in="noise"
-              type="saturate"
-              values="0"
-              result="desaturatedNoise"
-            />
-            <feComponentTransfer in="desaturatedNoise" result="adjustedNoise">
-              <feFuncA type="linear" slope="0.1" /> // Adjust this value to
-              change opacity
-            </feComponentTransfer>
-            <feBlend in="SourceGraphic" in2="adjustedNoise" mode="overlay" />
-          </filter>
 
-          {/* New filter for the added SVG */}
-          <filter
-            id="filter0_d_609_45"
-            x="1750.89"
-            y="-156.581"
-            width="828.669"
-            height="827.01"
-            filterUnits="userSpaceOnUse"
-            colorInterpolationFilters="sRGB">
-            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-            <feColorMatrix
-              in="SourceAlpha"
-              type="matrix"
-              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              result="hardAlpha"
-            />
-            <feOffset dx="4" dy="-4" />
-            <feGaussianBlur stdDeviation="8" />
-            <feComposite in2="hardAlpha" operator="out" />
-            <feColorMatrix
-              type="matrix"
-              values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
-            />
-            <feBlend
-              mode="normal"
-              in2="BackgroundImageFix"
-              result="effect1_dropShadow_609_45"
-            />
-            <feBlend
-              mode="normal"
-              in="SourceGraphic"
-              in2="effect1_dropShadow_609_45"
-              result="shape"
-            />
-          </filter>
           <clipPath id="clip0_587_19">
             <rect width="2500" height="450" fill="white" />
           </clipPath>

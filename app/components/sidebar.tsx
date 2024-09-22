@@ -10,15 +10,15 @@ import { Button } from "./ui/button";
 import { HomeSVG, Bookmarks, CogSVG } from "../assets/icons";
 import { JobsiteLogo } from "../assets/JobsiteLogo";
 
-type NavbarProps = {
+type SidebarProps = {
   className?: string;
 };
-export function Navbar({ className }: NavbarProps) {
+export function Sidebar({ className }: SidebarProps) {
   const [currentPage, setCurrentPage] = useState("Home");
   const navigate = useNavigate();
   const isActivePage = (pageName: string) => currentPage === pageName;
   return (
-    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] overflow-hidden backdrop-blur-md p-3 w-16 gap-[25vh] h-auto">
+    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-[var(--primaryBorder)] backdrop-blur-md p-3 w-16 gap-[25vh] h-auto">
       <div className="flex flex-col items-center mt-4 gap-10">
         <TooltipProvider>
           <Tooltip>

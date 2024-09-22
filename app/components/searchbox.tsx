@@ -35,7 +35,7 @@ export function SearchBox({ onSearch, className }: SearchBoxProps) {
           placeholder="Job Title"
           icon={JobSVG}
           value={jobTitle}
-          className="w-96 flex-1 backdrop-blur-sm element-shadow"
+          className="w-96 flex-1 backdrop-blur-sm"
           onChange={(e) => setJobTitle(e.target.value)}
         />
         <Input
@@ -44,12 +44,12 @@ export function SearchBox({ onSearch, className }: SearchBoxProps) {
           placeholder="Location"
           icon={LocationSVG}
           value={location}
-          className="w-64 flex-1  backdrop-blur-sm element-shadow"
+          className="w-64 flex-1 backdrop-blur-sm"
           onChange={(e) => setLocation(e.target.value)}
         />
         <Button
           type="submit"
-          className="rounded-xl bg-[var(--primaryBG)] aspect-square element-shadow"
+          className="rounded-xl bg-[var(--primaryBG)] aspect-square"
           disabled={isLoading}>
           {isLoading ? "Searching..." : <SubmitSVG className="h-4 w-4" />}
         </Button>
