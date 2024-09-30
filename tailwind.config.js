@@ -26,12 +26,14 @@ module.exports = {
         customBlue: "#0B2243",
         customPurple: "#141131",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "var(--primaryBG)",
           foreground: "hsl(var(--primary-foreground))",
+          border: "var(--primaryBorder)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "hsl(var(--secondaryBG))",
           foreground: "hsl(var(--secondary-foreground))",
+          border: "hsl(var(--secondaryBorder))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

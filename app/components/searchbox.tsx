@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { LocationSVG, SubmitSVG, JobSVG } from "~/assets/icons/";
-import { getSearch } from "~/api/api";
+import { getSearch } from "~/api/jSearchAPI";
 type SearchBoxProps = {
   onSearch: (results: any) => void;
   className?: string;

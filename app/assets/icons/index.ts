@@ -1,6 +1,6 @@
 export { HomeSVG } from "./HomeSVG";
 export { DiscoverySVG } from "./DiscoverySVG";
-export { Bookmarks } from "./Bookmarks";
+export { BookmarksSVG } from "./BookmarksSVG";
 export { CogSVG } from "./CogSVG";
 export { SearchSVG } from "./SearchSVG";
 export { LocationSVG } from "./LocationSVG";

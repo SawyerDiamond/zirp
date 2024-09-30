@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Sidebar } from "~/components/sidebar";
-import { TopBox } from "~/components/topbox";
-import { JobList } from "~/components/jobList";
+import { Sidebar } from "~/components/Sidebar";
+import { TopBox } from "~/components/TopBox";
+import { JobList } from "~/components/JobList";
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState([]);

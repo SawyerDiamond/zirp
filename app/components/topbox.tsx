@@ -1,4 +1,4 @@
-import { SearchBox } from "./searchbox";
+import { SearchBox } from "./SearchBox";
 import { GradientBox } from "../assets/GradientBox";
 
 type TopBoxProps = {

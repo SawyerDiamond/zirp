@@ -13,6 +13,7 @@ export const loader = async () => {
   return json({
     ENV: {
       JSEARCH_API_KEY: process.env.JSEARCH_API_KEY,
+      LOGO_DEV_PUBLIC_KEY: process.env.LOGO_DEV_PUBLIC_KEY,
     },
   });
 };

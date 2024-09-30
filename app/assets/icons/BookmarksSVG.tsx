@@ -1,4 +1,4 @@
-export function Bookmarks({ ...props }) {
+export function BookmarksSVG({ ...props }) {
   return (
     <svg
       width="24"

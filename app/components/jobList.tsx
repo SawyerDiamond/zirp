@@ -22,16 +22,27 @@ export function JobList({ jobs, className }: JobListProps) {
 
   return (
     <div className="h-full">
-      <div className="flex flex-col gap-4 h-[64vh]">
+      <div className="grid grid-cols-2 gap-4 h-[62.5vh]">
         {jobsToDisplay.map((job, index) => (
           <Card
             key={index}
             className="bg-[var(--secondaryBG)] text-white border border-[var(--secondaryBorder)] rounded-2xl">
             <CardHeader className="flex flex-row gap-2">
               <img
-                src={job.employer_logo}
+                src={`https://img.logo.dev/${job.employer_name
+                  .toLowerCase()
+                  .replace(/\s+/g, "")}.com?token=${
+                  typeof window !== "undefined"
+                    ? window.env?.LOGO_DEV_PUBLIC_KEY
+                    : process.env.LOGO_DEV_PUBLIC_KEY
+                }&size=80&format=png`}
                 alt={job.employer_name}
-                className="rounded-lg w-16 h-16"
+                className="rounded-lg w-10 h-10"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src =
+                    job.employer_logo || "/default-logo.png";
+                }}
               />
               <div className="flex flex-col">
                 <CardTitle>{job.job_title}</CardTitle>
