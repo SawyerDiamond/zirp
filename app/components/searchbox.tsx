@@ -7,7 +7,7 @@ type SearchBoxProps = {
   onSearch: (results: any) => void;
   className?: string;
 };
-export function SearchBox({ onSearch, className }: SearchBoxProps) {
+export function SearchBox({ onSearch }: SearchBoxProps) {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
   const [isLoading, setIsLoading] = useState(false);

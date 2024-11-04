@@ -1,4 +1,6 @@
-import { json } from "@remix-run/node";
+import { rootAuthLoader } from "@clerk/remix/ssr.server";
+import { ClerkApp } from "@clerk/remix";
+import { json, MetaFunction, LoaderFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -9,17 +11,25 @@ import {
 } from "@remix-run/react";
 import "./tailwind.css";
 
-export const loader = async () => {
-  return json({
-    ENV: {
-      JSEARCH_API_KEY: process.env.JSEARCH_API_KEY,
-      LOGO_DEV_PUBLIC_KEY: process.env.LOGO_DEV_PUBLIC_KEY,
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Jobsite - Find Your Dream Job" },
+    {
+      name: "description",
+      content: "Welcome to Jobsite - Find Your Dream Job!",
     },
-  });
+  ];
 };
 
-export default function App() {
-  const data = useLoaderData<typeof loader>();
+const envData = {
+  JSEARCH_API_KEY: process.env.JSEARCH_API_KEY || window.env.JSEARCH_API_KEY,
+  LOGO_DEV_PUBLIC_KEY:
+    process.env.LOGO_DEV_PUBLIC_KEY || window.env.LOGO_DEV_PUBLIC_KEY,
+};
+
+export const loader: LoaderFunction = (args) => rootAuthLoader(args);
+
+function App() {
   return (
     <html lang="en">
       <head>
@@ -34,10 +44,14 @@ export default function App() {
         <Scripts />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.env = ${JSON.stringify(data.ENV)}`,
+            __html: `window.env = ${JSON.stringify(envData)}`,
           }}
         />
       </body>
     </html>
   );
 }
+
+export default ClerkApp(App, {
+  publishableKey: "pk_test_ZXBpYy1zYWxtb24tMjguY2xlcmsuYWNjb3VudHMuZGV2JA",
+});

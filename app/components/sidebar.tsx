@@ -1,5 +1,3 @@
-import { useNavigate } from "@remix-run/react";
-import { useState } from "react";
 import { useSidebarNavigation } from "../hooks/useSidebarNavigation";
 
 import { TooltipProvider } from "./ui/tooltip";

@@ -14,8 +14,9 @@ h1 {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --primaryBG: #0c162a94;
-    --secondaryBG: #0c1e3acc;
+    --primaryBG: #0c162a;
+    --secondaryBG: #0c1e3a;
+    --tertiaryBG: #0c1e3ae5;
     --primaryBorder: #102143;
     --secondaryBorder: #425b8c59;
     --card-foreground: 222.2 84% 4.9%;
@@ -50,7 +51,13 @@ h1 {
   body {
     color: white;
     font-family: "NATS", sans-serif;
-    background: linear-gradient(120deg, #0b2243, #141131);
+    background: linear-gradient(
+        0deg,
+        rgba(15, 26, 49, 0.8) 0%,
+        rgba(15, 26, 49, 0.8) 100%
+      ),
+      linear-gradient(90deg, #052c5e 0%, #1a0331 100%);
+
     min-height: 100vh;
   }
 }
@@ -63,6 +70,13 @@ h1 {
     box-shadow: 0px -4px 16px 0px rgba(0, 0, 0, 0.15);
   }
 
+  .header-text_shadow {
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+  }
+
+  .bluePurpleGradient {
+    background: linear-gradient(90deg, #128cfe 0%, #4a21be 100%);
+  }
   .gradRectangle {
     box-shadow: 0px -4px 16px 0px rgba(58, 125, 240, 0.712);
   }

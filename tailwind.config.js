@@ -23,6 +23,11 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primaryBG: "hsl(var(--primaryBG))",
+        secondaryBG: "hsl(var(--secondaryBG))",
+        tertiaryBG: "hsl(var(--tertiaryBG))",
+        primaryBorder: "hsl(var(--primaryBorder))",
+        secondaryBorder: "hsl(var(--secondaryBorder))",
         customBlue: "#0B2243",
         customPurple: "#141131",
         primary: {
