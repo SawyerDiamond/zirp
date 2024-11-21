@@ -8,7 +8,6 @@ export default function Index() {
       <div className="flex flex-row absolute items-center pl-8 pt-8">
         <JobsiteLogo className="w-12 h-12" />
       </div>
-
       <div className="h-screen content-center justify-center">
         <div className="flex flex-col items-center justify-center ">
           <h1 className="text-7xl p-4">Find Your Dream Job Today!</h1>

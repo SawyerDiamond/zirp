@@ -1,34 +1,60 @@
+// /Users/sawyer/Documents/GitHub/jobsite/app/components/SearchBox.tsx
+
 import { useState } from "react";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { LocationSVG, SubmitSVG, JobSVG } from "~/assets/icons/";
 import { getSearch } from "~/api/jSearchAPI";
+import { JobItem } from "~/types/job";
+
 type SearchBoxProps = {
-  onSearch: (results: any) => void;
+  onSearch: (results: JobItem[]) => void;
   className?: string;
 };
-export function SearchBox({ onSearch }: SearchBoxProps) {
+
+export function SearchBox({ onSearch, className }: SearchBoxProps) {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!jobTitle.trim() || !location.trim()) {
+      alert("Please enter both Job Title and Location.");
+      console.warn("Search attempted with empty fields.");
+      return;
+    }
+
     setIsLoading(true);
-    console.log(jobTitle, location);
+    console.log(
+      "Search button pressed. Job Title:",
+      jobTitle,
+      "Location:",
+      location
+    );
+
     try {
       const results = await getSearch(jobTitle, location);
+      console.log("Search results received from API:", results);
       onSearch(results);
+
+      if (results.length === 0) {
+        console.warn("No jobs found for the given search criteria.");
+        alert("No jobs found. Please try a different search.");
+      }
     } catch (error) {
-      console.error("Error searching jobs:", error);
+      console.error("Error occurred during job search:", error);
+      alert("Failed to fetch job listings. Please try again.");
     } finally {
       setIsLoading(false);
+      console.log("Search operation completed. Loading state:", isLoading);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex z-50">
-      <div className="flex items-center gap-4 ">
+    <form onSubmit={handleSubmit} className={`flex z-50 ${className || ""}`}>
+      <div className="flex items-center gap-4">
         <Input
           name="Search"
           type="search"
@@ -36,7 +62,10 @@ export function SearchBox({ onSearch }: SearchBoxProps) {
           icon={JobSVG}
           value={jobTitle}
           className="w-96 flex-1 backdrop-blur-sm"
-          onChange={(e) => setJobTitle(e.target.value)}
+          onChange={(e) => {
+            setJobTitle(e.target.value);
+            console.log("Job Title input changed:", e.target.value);
+          }}
         />
         <Input
           name="Location"
@@ -45,7 +74,10 @@ export function SearchBox({ onSearch }: SearchBoxProps) {
           icon={LocationSVG}
           value={location}
           className="w-64 flex-1 backdrop-blur-sm"
-          onChange={(e) => setLocation(e.target.value)}
+          onChange={(e) => {
+            setLocation(e.target.value);
+            console.log("Location input changed:", e.target.value);
+          }}
         />
         <Button
           type="submit"

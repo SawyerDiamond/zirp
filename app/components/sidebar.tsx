@@ -11,8 +11,8 @@ export function Sidebar({ className }: SidebarProps) {
   const { isActivePage, handleNavigation } = useSidebarNavigation();
 
   return (
-    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-primary-border backdrop-blur-md p-3 w-16 gap-[25vh] h-auto">
-      <div className="flex flex-col items-center mt-4 gap-10">
+    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-[var(--primaryBG)] border border-primary-border backdrop-blur-md p-3 w-16 h-[63vh]">
+      <div className="flex flex-col items-center mt-4 gap-9">
         <TooltipProvider>
           <Home
             isActive={isActivePage("Dashboard")}

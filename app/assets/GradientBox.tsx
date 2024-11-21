@@ -5,14 +5,7 @@ interface GradientBoxProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: string | number;
   height?: string | number;
 }
-/*
-<svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 2500 450"
-        preserveAspectRatio="xMidYMid meet"
-        className="inset-0 w-full h-full rounded-2xl"
-        fill="none">
-*/
+
 export function GradientBox({
   children,
   width = "100%",

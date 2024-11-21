@@ -1,3 +1,5 @@
+// /Users/sawyer/Documents/GitHub/jobsite/app/routes/dashboard/index.tsx
+import React from "react";
 import { useState } from "react";
 import { Sidebar } from "~/components/Sidebar";
 import { TopBox } from "~/components/TopBox";
@@ -7,14 +9,13 @@ import { JobItem } from "~/types/job";
 export default function Home() {
   const [searchResults, setSearchResults] = useState<JobItem[]>([]);
 
-  const handleSearch = (results: any) => {
-    console.log("Search results in Index:", results);
-    if (results && results.data) {
-      console.log("Jobs data:", results.data);
-      const jobs = Array.isArray(results.data) ? results.data : [];
-      setSearchResults(jobs);
+  const handleSearch = (results: JobItem[]) => {
+    console.log("handleSearch called with results:", results);
+    if (Array.isArray(results)) {
+      setSearchResults(results);
+      console.log(`Updated searchResults state with ${results.length} jobs.`);
     } else {
-      console.error("Unexpected results structure:", results);
+      console.error("Received unexpected results structure:", results);
     }
   };
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Sidebar />
         <div>
           <JobList jobs={searchResults} />
+          console.log("Updated search results:", ${searchResults.length} jobs);
         </div>
       </div>
     </div>
