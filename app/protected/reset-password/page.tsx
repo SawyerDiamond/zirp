@@ -1,12 +1,22 @@
 import { resetPasswordAction } from "@/app/actions";
 import { FormMessage, Message } from "@/components/form-message";
-import { SubmitButton } from "@/components/submit-button";
+import { SubmitButton } from "@/components/SubmitButton";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default async function ResetPassword(props: {
   searchParams: Promise<Message>;
 }) {
+  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget.form;
+
+    if (form) {
+      const formData = new FormData(form);
+      await resetPasswordAction(formData);
+    }
+  };
+
   const searchParams = await props.searchParams;
   return (
     <form className="flex flex-col w-full max-w-md p-4 gap-2 [&>input]:mb-4">
@@ -28,9 +38,7 @@ export default async function ResetPassword(props: {
         placeholder="Confirm password"
         required
       />
-      <SubmitButton formAction={resetPasswordAction}>
-        Reset password
-      </SubmitButton>
+      <SubmitButton onClick={handleSubmit}>Reset password</SubmitButton>
       <FormMessage message={searchParams} />
     </form>
   );
