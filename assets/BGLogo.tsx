@@ -5,6 +5,7 @@ export function BGLogo({ className, ...props }: { className?: string }) {
       height="900"
       viewBox="0 0 706 900"
       fill="none"
+      opacity="25%"
       xmlns="http://www.w3.org/2000/svg"
       className={className}>
       <path

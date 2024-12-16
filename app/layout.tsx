@@ -1,8 +1,7 @@
-import { BGLogo } from "@/assets";
 import "./globals.css";
 
 export const metadata = {
-  title: "Jobsite",
+  title: "Zirp",
   description: "The best way to score your dream internship.",
 };
 
@@ -13,10 +12,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="overflow-y-hidden h-screen">
+      <body className="overflow-hidden h-screen">
         {children}
-        <div className="flares w-full h-full z-10"></div>
-        <BGLogo className="absolute -z-10 top-10 -left-64 h-[100%]" />
+        <div className="flares w-full h-full -z-10"></div>
+        <img
+          src="/BG.svg"
+          className="absolute -z-20 -top-32 -left-28 opacity-50"
+        />
       </body>
     </html>
   );

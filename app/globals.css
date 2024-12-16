@@ -5,11 +5,11 @@
 
 @layer base {
   :root {
-    --background: #0d1a34;
+    --background: #091428;
     --foreground: #ffffff;
     --primary: #030a1766;
-    --primary-border: #102143;
-    --secondary: #0c162a66;
+    --primary-border: #0d1b38;
+    --secondary: #14284b66;
     --secondary-border: #0f2249;
     --primary-foreground: #ffffff;
     --secondary-foreground: #ffffff;
@@ -46,6 +46,7 @@
   h3 {
     font-weight: 600;
   }
+
   body {
     @apply bg-background text-white;
   }
@@ -81,6 +82,22 @@
       ),
       linear-gradient(129deg, #128cfe 3.59%, #4a21be 100%);
   }
+
+  .gradient-background {
+    background: radial-gradient(
+        100% 100% at 0% 0%,
+        rgba(2, 97, 255, 0.6) 37.5%,
+        rgba(2, 97, 255, 0.25) 100%
+      ),
+      radial-gradient(
+        100% 100% at 100% 0%,
+        rgba(143, 28, 229, 0.75) 0%,
+        rgba(143, 28, 229, 0) 100%
+      ),
+      linear-gradient(129deg, #128cfe6d 3.59%, #4a21be6d 100%),
+      url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='0.6' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
   .gradient-shadow {
     box-shadow:
       0 4px 20px rgba(2, 97, 255, 0.1),
