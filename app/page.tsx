@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { JobsiteLogo, Grid } from "@/assets";
-import { SubmitSVG } from "@/assets/icons";
+import { Badge } from "@/components/ui/badge";
+import { JobsiteLogo } from "@/assets";
 import { motion } from "framer-motion";
-
 export default function Index() {
   return (
     <div className="h-screen overflow-hidden">
@@ -14,16 +13,15 @@ export default function Index() {
           <h2 className="text-xl">Zirp</h2>
         </div>
         <div>
-          <div className="flex flex-row items-center gap-4">
+          <div className="flex flex-row items-center gap-2">
             <Link href="/sign-in">
-              <Button variant="secondary">
+              <Button variant="secondary" className="button_transition-white">
                 <span className="text-sm">Sign In</span>
               </Button>
             </Link>
             <Link href="/sign-up">
-              <Button variant="secondary" className="ml-auto">
+              <Button variant="gradient" className="ml-auto">
                 <span className="text-sm">Sign Up</span>
-                <SubmitSVG className="w-3 h-3 ml-1" />
               </Button>
             </Link>
           </div>
@@ -32,12 +30,7 @@ export default function Index() {
       <main className="h-screen flex flex-row content-center justify-center pb-4">
         <section className="w-[55%] h-[calc(100%-3.5rem)] flex flex-col items-center justify-center ">
           <Link href="/app/protected/page.tsx">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-lg p-2">
-              <Button className="hover:gradient">Browse as Guest</Button>
-            </motion.div>
+            <Badge />
           </Link>
 
           <h1 className="text-5xl p-4 flex flex-col text-center gap-2">
@@ -51,14 +44,18 @@ export default function Index() {
         </section>
         <section className="w-[45%] p-4 mb-4 flex items-start justify-end">
           <div className="w-full h-[94%] rounded-3xl gradient-background relative overflow-hidden">
-            <motion.img
-              src="/screenGrab.webp"
-              alt="screen grab"
-              className="absolute ml-20 mt-20 z-0"
-              initial={{ opacity: 0, y: 20, x: -10 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              transition={{ duration: 0.5 }}
-            />
+            <div
+              className="border border-transparent rounded-3xl w-full h-full"
+              style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}>
+              <motion.img
+                src="/screenGrab.webp"
+                alt="screen grab"
+                className="absolute ml-20 mt-20 z-0 rounded-3xl shadow-xl shadow-blue-950"
+                initial={{ opacity: 0, y: 40, x: 40 }}
+                animate={{ opacity: 1, y: 0, x: 0 }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
           </div>
         </section>
       </main>

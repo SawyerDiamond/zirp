@@ -90,8 +90,8 @@ export function JobsiteLogo({ className, ...props }: { className?: string }) {
           x2="86.4164"
           y2="76.5452"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="#128CFE" />
-          <stop offset="1" stop-color="#4A21BE" />
+          <stop stopColor="#128CFE" />
+          <stop offset="1" stopColor="#4A21BE" />
         </linearGradient>
         <radialGradient
           id="paint1_radial_1089_1325"
@@ -100,8 +100,8 @@ export function JobsiteLogo({ className, ...props }: { className?: string }) {
           r="1"
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(78.2417 3.75833) rotate(90) scale(46.125 46.125)">
-          <stop stop-color="#8F1CE5" />
-          <stop offset="1" stop-color="#8F1CE5" stop-opacity="0" />
+          <stop stopColor="#8F1CE5" />
+          <stop offset="1" stopColor="#8F1CE5" stopOpacity="0" />
         </radialGradient>
         <radialGradient
           id="paint2_radial_1089_1325"
@@ -110,8 +110,8 @@ export function JobsiteLogo({ className, ...props }: { className?: string }) {
           r="1"
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(0 35.1917) rotate(90) scale(46.8083 46.8083)">
-          <stop offset="0.375" stop-color="#0261FF" />
-          <stop offset="1" stop-color="#0261FF" stop-opacity="0" />
+          <stop offset="0.375" stopColor="#0261FF" />
+          <stop offset="1" stopColor="#0261FF" stopOpacity="0" />
         </radialGradient>
         <clipPath id="clip0_1089_1325">
           <rect width="82" height="82" rx="24" fill="white" />

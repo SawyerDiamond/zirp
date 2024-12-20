@@ -86,10 +86,18 @@ const config = {
             height: "0",
           },
         },
+        disco: {
+          "0%": { transform: "translateY(-50%) rotate(0deg)" },
+          "100%": { transform: "translateY(-50%) rotate(360deg)" },
+        },
+      },
+      backgroundImage: {
+        "gradient-conic": "conic-gradient(var(--tw-gradient-stops))",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        disco: "disco 3s linear infinite",
       },
     },
   },
