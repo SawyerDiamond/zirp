@@ -27,11 +27,14 @@ const config = {
         primary: {
           DEFAULT: "var(--primary)",
           border: "var(--primary-border)",
+          darker: "var(--primary-darker)",
+          solid: "var(--primary-solid)",
           foreground: "var(--primary-foreground)",
         },
         secondary: {
           DEFAULT: "var(--secondary)",
           border: "var(--secondary-border)",
+          solid: "var(--secondary-solid)",
           foreground: "var(--secondary-foreground)",
         },
         destructive: {

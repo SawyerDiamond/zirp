@@ -10,16 +10,16 @@ export interface InputProps
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, icon: Icon, type, ...props }, ref) => {
     return (
-      <div className="flex items-center">
+      <div className="relative flex items-center">
         {Icon && (
-          <div className="absolute inset-y-0 left-0 flex items-center z-10 p-[.65rem] bg-primary border border-secondary rounded-xl">
-            <Icon className="h-5 w-5 text-gray-400" />
+          <div className="absolute p-[.6rem] rounded-xl bg-primary-solid flex items-center z-10">
+            <Icon className="h-5 w-5" />
           </div>
         )}
         <input
           type={type}
           className={cn(
-            "flex content-center text-align h-10 pl-[10px] w-full rounded-xl bg-primary border border-primary-border text-sm font-medium ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring  disabled:cursor-not-allowed disabled:opacity-50",
+            "pl-12 rounded-xl w-full h-10 bg-primary-darker backdrop-blur border border-primary-border text-sm text-gray-200 font-medium ring-offset-primary-border file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
             className
           )}
           ref={ref}

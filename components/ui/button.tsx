@@ -10,15 +10,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary border-primary-border border p-2 px-3 backdrop-blur-xl text-primary-foreground hover:bg-secondaryBG",
+          "bg-primary border-primary-border border p-2 px-3 backdrop-blur-xl text-primary-foreground hover:bg-secondaryBG rounded-xl",
         secondary:
           "bg-secondary backdrop-blur border-secondary-border text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-primary-solid hover:border-primary-border rounded-lg",
         gradient: "gradient",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
         default: "h-10 px-6 rounded-xl",
+        squareSM: "h-10 aspect-square",
         sm: "h-8 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",

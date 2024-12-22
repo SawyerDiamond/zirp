@@ -8,11 +8,12 @@
     --background: #091428;
     --foreground: #ffffff;
     --primary: #030a1766;
+    --primary-darker: #030a17a7;
+    --primary-solid: #030a17;
     --primary-border: #0d1b38;
     --secondary: #14284b66;
+    --secondary-solid: #14284b;
     --secondary-border: #0f2249;
-    --primary-foreground: #ffffff;
-    --secondary-foreground: #ffffff;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -91,9 +92,27 @@
       0 0 35px rgba(18, 140, 254, 0.05);
     transition: all 0.3s ease;
   }
+
+  .gradient-glow {
+    background: radial-gradient(
+        100% 100% at 0% 0%,
+        rgba(2, 97, 255, 0.5) 37.5%,
+        rgba(2, 97, 255, 0) 100%
+      ),
+      radial-gradient(
+        100% 100% at 100% 0%,
+        rgba(143, 28, 229, 0.5) 0%,
+        rgba(143, 28, 229, 0) 100%
+      ),
+      linear-gradient(120deg, #128cfe 0%, #4a21be 100%);
+    box-shadow:
+      0 0 15px rgba(102, 31, 206, 0.2),
+      0 0 25px rgba(60, 86, 230, 0.1),
+      0 0 35px rgba(18, 140, 254, 0.05);
+  }
   .badge-border:hover {
-    outline: #128cfe solid 1px;
     transition: all 0.3s ease;
+    background: none;
   }
   .badge-shadow:hover {
     box-shadow: 0 0 15px rgba(18, 140, 254, 0.2);

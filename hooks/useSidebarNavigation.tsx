@@ -1,16 +1,18 @@
-import { useState } from "react";
-import { useNavigate } from "@remix-run/react";
-
+"use client";
+import { useRouter, usePathname } from "next/navigation";
 export function useSidebarNavigation() {
-  const [currentPage, setCurrentPage] = useState("Home");
-  const navigate = useNavigate();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const isActivePage = (pageName: string) => currentPage === pageName;
+  function isActivePage(pageName: string) {
+    if (pageName === "Dashboard" && pathname === "/") return true;
+    if (pageName === "Bookmarks" && pathname === "/bookmarks") return true;
+    return false;
+  }
 
-  const handleNavigation = (pageName: string, path: string) => {
-    setCurrentPage(pageName);
-    navigate(path);
-  };
+  function handleNavigation(pageName: string, route: string) {
+    router.push(route);
+  }
 
   return { isActivePage, handleNavigation };
 }

@@ -3,7 +3,7 @@ import { RightArrowSVG } from "@/assets/icons/RightArrowSVG";
 export const Badge = () => {
   return (
     <button className="relative overflow-hidden rounded-[13px] px-16 py-4 badge-shadow">
-      <div className="absolute inset-px z-10 flex items-center justify-center rounded-xl bg-secondary-border badge-border gap-2">
+      <div className="absolute inset-px z-10 flex items-center justify-center rounded-xl bg-primary-border badge-border gap-2">
         <span className="text-sm font-semibold">Get Started</span>
         <RightArrowSVG className="w-1.5" />
       </div>

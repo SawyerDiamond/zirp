@@ -1,7 +1,7 @@
 // /app/components/JobListItem.tsx
 
 import React from "react";
-import type { JobItem } from "~/types/job";
+import type { JobItem } from "@/types/job";
 
 type JobListItemProps = {
   job: JobItem;
@@ -26,8 +26,7 @@ export function JobListItem({ job }: JobListItemProps) {
         href={job.job_apply_link}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-blue-500 underline"
-      >
+        className="text-blue-500 underline">
         Apply Now
       </a>
       <p className="mt-2">{job.job_description.substring(0, 200)}...</p>
