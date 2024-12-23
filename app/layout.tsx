@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="overflow-hidden h-screen">
+      <body className="overflow-hidden h-screen m-4">
         {children}
         <div className="flares w-full h-full -z-10"></div>
         <img
