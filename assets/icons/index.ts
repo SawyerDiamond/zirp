@@ -6,3 +6,4 @@ export { SearchSVG } from "./SearchSVG";
 export { LocationSVG } from "./LocationSVG";
 export { JobSVG } from "./JobSVG";
 export { SubmitSVG } from "./SubmitSVG";
+export { Logout } from "./Logout";

@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { signOut } from "@/lib/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Logout } from "@/assets/icons";
 
 const SignOutButton = () => {
   const router = useRouter();
@@ -23,8 +24,12 @@ const SignOutButton = () => {
   };
 
   return (
-    <Button onClick={handleSignOut} disabled={isLoading}>
-      {isLoading ? "Signing out..." : "Sign Out"}
+    <Button
+      variant="ghost"
+      size={"icon"}
+      onClick={handleSignOut}
+      disabled={isLoading}>
+      <Logout className="w-5 h-5" />
     </Button>
   );
 };

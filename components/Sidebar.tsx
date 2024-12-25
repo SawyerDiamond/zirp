@@ -3,6 +3,7 @@ import { useSidebarNavigation } from "../hooks/useSidebarNavigation";
 import { TooltipProvider } from "./ui/tooltip";
 import { JobsiteLogo } from "../assets/JobsiteLogo";
 import { Bookmarks, Filters, Home } from "@/components/sidebarComponents";
+import SignOutButton from "./SignOutButton";
 
 type SidebarProps = {
   className?: string;
@@ -25,9 +26,10 @@ export function Sidebar({ className }: SidebarProps) {
           <Filters />
         </TooltipProvider>
       </div>
-      <div className="flex items-center justify-center">
+
+      <div className="flex flex-col gap-2 items-center justify-center">
+        <SignOutButton />
         <JobsiteLogo className="h-9 w-9" />
-        <span className="sr-only">Jobsite Logo</span>
       </div>
     </nav>
   );
