@@ -4,6 +4,7 @@ import { TopBox } from "@/components/TopBox";
 import { Sidebar } from "@/components/Sidebar";
 import { JobList } from "@/components/JobList";
 import { JobItem } from "@/types/job";
+import { BGLogo } from "@/assets/BGLogo";
 
 export function Home() {
   const [searchResults, setSearchResults] = useState<JobItem[]>([]);
@@ -25,6 +26,10 @@ export function Home() {
         <Sidebar />
         <JobList jobs={searchResults} />
       </div>
+      <BGLogo
+        fillColor="#0D1E3D"
+        className="absolute -z-20 -top-32 -right-28 opacity-50"
+      />
     </div>
   );
 }

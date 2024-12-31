@@ -1,4 +1,4 @@
-export function JobsiteLogo({ className, ...props }: { className?: string }) {
+export function ZirpLogo({ className, ...props }: { className?: string }) {
   return (
     <svg
       width="82"

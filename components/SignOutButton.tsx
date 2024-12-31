@@ -1,34 +1,25 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { signOut } from "@/lib/auth";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { signOutAction } from "@/app/actions";
 import { Logout } from "@/assets/icons";
+import { useTransition } from "react";
 
 const SignOutButton = () => {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
-  const handleSignOut = async () => {
-    setIsLoading(true);
-    try {
-      await signOut();
-      router.push("/");
-      router.refresh();
-    } catch (error) {
-      console.error("Sign out failed:", error);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleSignOut = () => {
+    startTransition(() => {
+      signOutAction();
+    });
   };
 
   return (
     <Button
       variant="ghost"
-      size={"icon"}
+      size="icon"
       onClick={handleSignOut}
-      disabled={isLoading}>
+      disabled={isPending}>
       <Logout className="w-5 h-5" />
     </Button>
   );

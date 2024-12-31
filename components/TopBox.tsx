@@ -1,7 +1,7 @@
 import { SearchBox } from "@/components/SearchBox";
 import GradientBox from "@/components/GradientBox";
 import SignOutButton from "./SignOutButton";
-
+import { BGLogo } from "@/assets/BGLogo";
 type TopBoxProps = {
   onSearch: (results: any) => void;
   className?: string;
@@ -16,9 +16,9 @@ export function TopBox({ onSearch, className }: TopBoxProps) {
           </h1>
           <SearchBox onSearch={onSearch} />
         </div>
-        <img
-          src="/BG.svg"
-          className="absolute z-20 -top-40 -right-20 opacity-50"
+        <BGLogo
+          fillColor="#FFFFFF"
+          className="absolute -z-20 -top-28 -right-32 opacity-50"
         />
       </GradientBox>
     </div>

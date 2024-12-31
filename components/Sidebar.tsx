@@ -1,7 +1,7 @@
 import { useSidebarNavigation } from "../hooks/useSidebarNavigation";
 
 import { TooltipProvider } from "./ui/tooltip";
-import { JobsiteLogo } from "../assets/JobsiteLogo";
+import { ZirpLogo } from "@/assets/ZirpLogo";
 import { Bookmarks, Filters, Home } from "@/components/sidebarComponents";
 import SignOutButton from "./SignOutButton";
 
@@ -29,7 +29,7 @@ export function Sidebar({ className }: SidebarProps) {
 
       <div className="flex flex-col gap-2 items-center justify-center">
         <SignOutButton />
-        <JobsiteLogo className="h-9 w-9" />
+        <ZirpLogo className="h-9 w-9" />
       </div>
     </nav>
   );

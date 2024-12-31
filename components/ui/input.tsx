@@ -19,7 +19,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            "pl-12 rounded-xl w-full h-10 bg-primary-darker backdrop-blur border border-primary-border text-sm text-gray-200 font-medium ring-offset-primary-border file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+            `${Icon ? "pl-12" : "pl-4"} rounded-xl w-full h-10 bg-primary-darker backdrop-blur border border-secondary-border text-sm text-gray-200 font-medium ring-offset-secondary-border file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50`,
             className
           )}
           ref={ref}
