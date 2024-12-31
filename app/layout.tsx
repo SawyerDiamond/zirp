@@ -1,4 +1,3 @@
-import { BGLogo } from "@/assets";
 import "./globals.css";
 import Head from "next/head";
 export const metadata = {

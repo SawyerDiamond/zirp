@@ -18,7 +18,7 @@ export function TopBox({ onSearch, className }: TopBoxProps) {
         </div>
         <BGLogo
           fillColor="#FFFFFF"
-          className="absolute -z-20 -top-28 -right-32 opacity-50"
+          className="absolute -z-20 -top-36 -right-32 opacity-20"
         />
       </GradientBox>
     </div>
