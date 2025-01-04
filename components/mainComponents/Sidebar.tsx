@@ -1,9 +1,13 @@
-import { useSidebarNavigation } from "../hooks/useSidebarNavigation";
+import { useSidebarNavigation } from "../../hooks/useSidebarNavigation";
 
-import { TooltipProvider } from "./ui/tooltip";
+import { TooltipProvider } from "../ui/tooltip";
 import { ZirpLogo } from "@/assets/ZirpLogo";
-import { Bookmarks, Filters, Home } from "@/components/sidebarComponents";
-import SignOutButton from "./SignOutButton";
+import {
+  Bookmarks,
+  Filters,
+  Home,
+} from "@/components/mainComponents/sidebarComponents";
+import SignOutButton from "@/components/mainComponents/SignOutButton";
 
 type SidebarProps = {
   className?: string;

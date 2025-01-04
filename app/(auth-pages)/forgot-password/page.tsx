@@ -1,5 +1,5 @@
-import ForgotPasswordForm from "../../../components/ForgotPasswordForm";
-import { Message } from "@/components/form-message";
+import ForgotPasswordForm from "../../../components/authComponents/ForgotPasswordForm";
+import { Message } from "@/components/authComponents/form-message";
 
 export default async function ForgotPassword(props: {
   searchParams: Promise<Message>;
