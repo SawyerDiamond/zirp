@@ -14,7 +14,7 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary backdrop-blur border-secondary-border text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-primary-solid hover:border-primary-border rounded-lg",
-        gradient: "gradient",
+        gradient: "gradient hover:saturate-150",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
