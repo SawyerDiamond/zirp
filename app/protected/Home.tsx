@@ -6,8 +6,9 @@ import { JobItem } from "@/types/job";
 import { BGLogo } from "@/assets/BGLogo";
 
 import { JobCard } from "@/components/mainComponents/JobCard";
+import { FeaturedCard } from "@/components/mainComponents/FeaturedCard";
 
-const jobs = [
+const placeholderJobs = [
   {
     companyName: "TechCorp",
     positionTitle: "Senior Frontend Developer",
@@ -65,7 +66,9 @@ export function Home() {
     console.log("handleSearch called with results:", results);
     if (Array.isArray(results)) {
       setSearchResults(results);
-      console.log(`Updated searchResults state with ${results.length} jobs.`);
+      console.log(
+        `Updated searchResults state with ${results.length} placeholderJobs.`
+      );
     } else {
       console.error("Received unexpected results structure:", results);
     }
@@ -76,8 +79,25 @@ export function Home() {
       <TopBox onSearch={handleSearch} />
       <div className="flex gap-4 flex-row">
         <Sidebar />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {jobs.map((job, index) => (
+        <div className="flex flex-col w-full gap-6">
+          <div className="flex flex-row gap-6">
+            <FeaturedCard
+              featureName="Big Tech"
+              featureImage="/icons/BigTechIcon.svg"
+              imageColor="bg-accent-blue"
+            />
+            <FeaturedCard
+              featureName="Big Tech"
+              featureImage="/icons/BigTechIcon.svg"
+              imageColor="bg-accent-purple"
+            />{" "}
+            <FeaturedCard
+              featureName="Big Tech"
+              featureImage="/icons/BigTechIcon.svg"
+              imageColor="bg-accent-blue"
+            />
+          </div>
+          {placeholderJobs.map((job, index) => (
             <JobCard key={index} {...job} />
           ))}
         </div>

@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: #091428;
+    --background: #06101f;
     --foreground: #ffffff;
     --primary: #030a1766;
     --primary-darker: #030a17a7;
@@ -16,6 +16,8 @@
     --secondary-solid: #14284b;
     --secondary-border: #0f2249;
 
+    --accent-blue: #128cfe;
+    --accent-purple: #661fce;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
