@@ -84,17 +84,20 @@ export function Home() {
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
-              imageColor="bg-accent-blue"
+              imageColor="#128cfe"
+              className="flex-1"
             />
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
-              imageColor="bg-accent-purple"
-            />{" "}
+              imageColor="#661fce"
+              className="flex-1"
+            />
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
-              imageColor="bg-accent-blue"
+              imageColor="#128cfe"
+              className="flex-1"
             />
           </div>
           {placeholderJobs.map((job, index) => (
