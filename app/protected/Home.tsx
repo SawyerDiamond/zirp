@@ -84,22 +84,23 @@ export function Home() {
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
-              imageColor="#128cfe"
+              imageColor="128cfe"
               className="flex-1"
             />
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
-              imageColor="#661fce"
+              imageColor="661fce"
               className="flex-1"
             />
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
-              imageColor="#128cfe"
+              imageColor="128cfe"
               className="flex-1"
             />
           </div>
+          <h3 className="text-2xl font-semibold pl-1">Recently Added</h3>
           {placeholderJobs.map((job, index) => (
             <JobCard key={index} {...job} />
           ))}
