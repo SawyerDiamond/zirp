@@ -16,7 +16,7 @@ export function Sidebar({ className }: SidebarProps) {
   const { isActivePage, handleNavigation } = useSidebarNavigation();
 
   return (
-    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-primary border border-primary-border backdrop-blur p-3 w-16 h-[64vh]">
+    <nav className="card-shadow flex flex-col items-center justify-between rounded-2xl bg-primary border border-primary-border backdrop-blur p-3 w-16 h-[63.5vh]">
       <div className="flex flex-col items-center mt-4 gap-6">
         <TooltipProvider>
           <Home

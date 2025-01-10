@@ -79,12 +79,18 @@ export function Home() {
       <TopBox onSearch={handleSearch} />
       <div className="flex gap-4 flex-row">
         <Sidebar />
-        <div className="flex flex-col w-full gap-4 overflow-y-auto max-h-[30rem]">
+        <div className="flex flex-col w-full gap-4 overflow-y-auto max-h-[66vh]">
           <div className="flex flex-row gap-4">
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
               imageColor="128cfe"
+              className="flex-1"
+            />
+            <FeaturedCard
+              featureName="Big Tech"
+              featureImage="/icons/BigTechIcon.svg"
+              imageColor="661fce"
               className="flex-1"
             />
             <FeaturedCard

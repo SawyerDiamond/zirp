@@ -38,7 +38,6 @@ export default function RootLayout({
       <body className="overflow-hidden h-screen">
         {children}
         <div className="flares w-full h-full -z-10"></div>
-        <img src="/BG.svg" alt="Background Image" />
       </body>
     </html>
   );

@@ -21,8 +21,8 @@ export function JobCard({
       <CardHeader className="flex flex-row items-center gap-3">
         <ZirpLogoB className="w-14 h-14" />
         <div>
-          <h3 className="text-lg font-semibold">{companyName}</h3>
-          <p className="text-sm text-muted-foreground">{positionTitle}</p>
+          <h3 className="text-lg font-semibold">{positionTitle}</h3>
+          <p className="text-sm text-muted-foreground">{companyName}</p>
         </div>
       </CardHeader>
       <CardContent>
