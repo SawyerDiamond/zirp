@@ -79,8 +79,8 @@ export function Home() {
       <TopBox onSearch={handleSearch} />
       <div className="flex gap-4 flex-row">
         <Sidebar />
-        <div className="flex flex-col w-full gap-4 overflow-y-auto max-h-[66vh]">
-          <div className="flex flex-row gap-4">
+        <div className="flex flex-col w-full gap-4 overflow-y-auto max-h-[66vh] pt-4">
+          {/* <div className="flex flex-row gap-4">
             <FeaturedCard
               featureName="Big Tech"
               featureImage="/icons/BigTechIcon.svg"
@@ -105,9 +105,9 @@ export function Home() {
               imageColor="661fce"
               className="flex-1"
             />
-          </div>
+          </div> */}
           <h3 className="text-2xl font-semibold pl-1">Recently Added</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 mb-5">
             {placeholderJobs.map((job, index) => (
               <JobCard key={index} {...job} />
             ))}
