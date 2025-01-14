@@ -12,18 +12,11 @@ export const Navbar = () => {
         </div>
       </div>
       <div>
-        <div className="flex flex-row items-center gap-2">
-          <Link href="/sign-in">
-            <Button variant="secondary" className="button_transition-white">
-              <span className="text-sm font-semibold">Sign In</span>
-            </Button>
-          </Link>
-          <Link href="/sign-up">
-            <Button variant="gradient" className="ml-auto">
-              <span className="text-sm font-semibold">Sign Up</span>
-            </Button>
-          </Link>
-        </div>
+        <Link href="/sign-up">
+          <Button variant="gradient" className="ml-auto">
+            <span className="text-sm font-semibold">Sign Up</span>
+          </Button>
+        </Link>
       </div>
     </nav>
   );

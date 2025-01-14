@@ -16,6 +16,7 @@ export function TopBox({ onSearch, className }: TopBoxProps) {
           </h1>
           <SearchBox onSearch={onSearch} />
         </div>
+
         <BGLogo
           fillColor="#FFFFFF"
           className="absolute z-20 -top-36 -right-64 opacity-10"
