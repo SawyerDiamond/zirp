@@ -49,7 +49,7 @@ const Auth = () => {
     <section className="flex flex-row items-start justify-center h-screen w-screen">
       <Card className="w-[45vw] h-[calc(100vh-2rem)] bg-secondary border border-secondary-border backdrop-blur rounded-2xl overflow-hidden">
         <CardContent className="w-full h-full pt-6 flex flex-col justify-between">
-          <motion.CardHeader
+          <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -57,11 +57,12 @@ const Auth = () => {
               stiffness: 300,
               damping: 60,
               delay: 0.4,
-            }}
-            className="flex flex-row items-center content-center gap-2">
-            <ZirpLogoB className="w-10 h-10" />
-            <h2 className="text-4xl leading-none">ZIRP</h2>
-          </motion.CardHeader>
+            }}>
+            <CardHeader className="flex flex-row items-center content-center gap-2">
+              <ZirpLogoB className="w-10 h-10" />
+              <h2 className="text-4xl leading-none">ZIRP</h2>
+            </CardHeader>
+          </motion.div>
 
           <motion.div
             initial={{ y: 100, opacity: 0 }}
@@ -84,12 +85,11 @@ const Auth = () => {
         />
       </Card>
       <div className="flex flex-col w-[30rem] h-full justify-center gap-4 mx-auto">
-        <Tabs defaultValue="signUp">
+        <Tabs
+          defaultValue="signUp"
+          onValueChange={(value) => setIsSignUp(value === "signUp")}>
           <TabsList>
-            <TabsTrigger
-              onClick={() => setIsSignUp(!isSignUp)}
-              value="signUp"
-              className="gap-1">
+            <TabsTrigger value="signUp" className="gap-1">
               <Image
                 src="/icons/SignUp.svg"
                 width="16"
@@ -98,10 +98,7 @@ const Auth = () => {
               />
               Sign Up
             </TabsTrigger>
-            <TabsTrigger
-              onClick={() => setIsSignUp(!isSignUp)}
-              value="signIn"
-              className="gap-1">
+            <TabsTrigger value="signIn" className="gap-1">
               <Image
                 src="/icons/SignIn.svg"
                 width="16"
