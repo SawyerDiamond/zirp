@@ -27,7 +27,7 @@ import Image from "next/image";
 const Auth = () => {
   const { handleGoogleSignIn, error: googleSignInError } = useGoogleSignIn();
   const [message, setMessage] = useState<Message | null>(null);
-  const [isSignUp, setIsSignUp] = useState<boolean>(false);
+  const [isSignUp, setIsSignUp] = useState<boolean>(true);
 
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
