@@ -14,7 +14,7 @@ export const Navbar = () => {
       <div>
         <Link href="/sign-up">
           <Button variant="gradient" className="ml-auto">
-            <span className="text-sm font-semibold">Sign Up</span>
+            <span className="text-sm font-semibold">Get Started</span>
           </Button>
         </Link>
       </div>
