@@ -142,41 +142,69 @@ const Auth = () => {
               />
             </div>
 
-            <Label htmlFor="password">Password</Label>
-
-            <div className="flex flex-row w-full gap-2">
-              <Input
-                type="password"
-                name="password"
-                placeholder="Password"
-                className="h-11"
-                required
-              />
-              {isSignUp && (
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="password">Password</Label>
+              <div className="flex flex-row w-full gap-2">
                 <Input
                   type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Your Password"
+                  name="password"
+                  placeholder="Password"
                   className="h-11"
                   required
                 />
-              )}
+                {isSignUp && (
+                  <Input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Confirm Your Password"
+                    className="h-11"
+                    required
+                  />
+                )}
+              </div>
             </div>
 
-            <div>
-              <SubmitButton
-                onClick={handleSubmit}
-                className="w-full mb-2 transition-transform transform hover:scale-103 hover:gradient-shadow"
-                pendingText={isSignUp ? "Signing up..." : "Signing in..."}>
-                {isSignUp ? "Sign Up" : "Sign In"}
-              </SubmitButton>
+            <SubmitButton
+              onClick={handleSubmit}
+              className="w-full transition-transform transform hover:scale-103 hover:gradient-shadow"
+              pendingText={isSignUp ? "Signing up..." : "Signing in..."}>
+              {isSignUp ? "Sign Up" : "Sign In"}
+            </SubmitButton>
+            <div className="flex flex-row gap-2">
+              <Button
+                onClick={handleGoogleSignIn}
+                className="h-11 flex-1"
+                variant="default">
+                <Image
+                  src="/icons/google.svg"
+                  width="16"
+                  height="16"
+                  alt="Google Icon"
+                />
+              </Button>
+              <Button
+                onClick={handleGoogleSignIn}
+                className="h-11 flex-1"
+                variant="default">
+                <Image
+                  src="/icons/msft.svg"
+                  width="16"
+                  height="16"
+                  alt="Microsoft Icon"
+                />
+              </Button>
+              <Button
+                onClick={handleGoogleSignIn}
+                className="h-11 flex-1"
+                variant="default">
+                <Image
+                  src="/icons/apple.svg"
+                  width="16"
+                  height="16"
+                  alt="Apple Icon"
+                />
+              </Button>
             </div>
-            <Button
-              onClick={handleGoogleSignIn}
-              className="h-11"
-              variant="default">
-              {isSignUp ? "Sign Up with Google" : "Sign In with Google"}
-            </Button>
 
             {googleSignInError && (
               <FormMessage message={{ message: googleSignInError }} />
