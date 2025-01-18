@@ -10,52 +10,64 @@ import { FeaturedCard } from "@/components/mainComponents/FeaturedCard";
 
 const placeholderJobs = [
   {
-    companyName: "TechCorp",
-    positionTitle: "Senior Frontend Developer",
+    company: "TechCorp",
+    title: "Senior Frontend Developer",
     location: "San Francisco, CA",
     description:
       "We're looking for an experienced frontend developer to join our team and help build amazing user interfaces.",
     salary: "$120,000 - $150,000",
+    timestamp: new Date().toISOString(),
+    apply_url: "https://example.com/apply",
   },
   {
-    companyName: "DataSystems Inc.",
-    positionTitle: "Data Scientist",
+    company: "DataSystems Inc.",
+    title: "Data Scientist",
     location: "New York, NY",
     description:
       "Join our data science team to work on cutting-edge machine learning projects and drive business insights.",
     salary: "$100,000 - $130,000",
+    timestamp: new Date().toISOString(),
+    apply_url: "https://example.com/apply",
   },
   {
-    companyName: "CloudNine Solutions",
-    positionTitle: "DevOps Engineer",
+    company: "CloudNine Solutions",
+    title: "DevOps Engineer",
     location: "Austin, TX",
     description:
       "Help us build and maintain our cloud infrastructure and streamline our deployment processes.",
     salary: "$110,000 - $140,000",
+    timestamp: new Date().toISOString(),
+    apply_url: "https://example.com/apply",
   },
   {
-    companyName: "TechCorp",
-    positionTitle: "Senior Frontend Developer",
+    company: "TechCorp",
+    title: "Senior Frontend Developer",
     location: "San Francisco, CA",
     description:
       "We're looking for an experienced frontend developer to join our team and help build amazing user interfaces.",
     salary: "$120,000 - $150,000",
+    timestamp: new Date().toISOString(),
+    apply_url: "https://example.com/apply",
   },
   {
-    companyName: "DataSystems Inc.",
-    positionTitle: "Data Scientist",
+    company: "DataSystems Inc.",
+    title: "Data Scientist",
     location: "New York, NY",
     description:
       "Join our data science team to work on cutting-edge machine learning projects and drive business insights.",
     salary: "$100,000 - $130,000",
+    timestamp: new Date().toISOString(),
+    apply_url: "https://example.com/apply",
   },
   {
-    companyName: "CloudNine Solutions",
-    positionTitle: "DevOps Engineer",
+    company: "CloudNine Solutions",
+    title: "DevOps Engineer",
     location: "Austin, TX",
     description:
       "Help us build and maintain our cloud infrastructure and streamline our deployment processes.",
     salary: "$110,000 - $140,000",
+    timestamp: new Date().toISOString(),
+    apply_url: "https://example.com/apply",
   },
 ];
 
@@ -109,7 +121,7 @@ export function Home() {
           <h3 className="text-2xl font-semibold pl-1">Recently Added</h3>
           <div className="grid grid-cols-2 gap-4 mb-5">
             {placeholderJobs.map((job, index) => (
-              <JobCard key={index} {...job} />
+              <JobCard key={index} job={job} />
             ))}
           </div>
         </div>
