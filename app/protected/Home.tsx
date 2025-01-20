@@ -10,6 +10,7 @@ import { FeaturedCard } from "@/components/mainComponents/FeaturedCard";
 
 const placeholderJobs = [
   {
+    id: 2646234,
     company: "TechCorp",
     title: "Senior Frontend Developer",
     location: "San Francisco, CA",
@@ -20,6 +21,7 @@ const placeholderJobs = [
     apply_url: "https://example.com/apply",
   },
   {
+    id: 2646534,
     company: "DataSystems Inc.",
     title: "Data Scientist",
     location: "New York, NY",
@@ -30,6 +32,7 @@ const placeholderJobs = [
     apply_url: "https://example.com/apply",
   },
   {
+    id: 2647234,
     company: "CloudNine Solutions",
     title: "DevOps Engineer",
     location: "Austin, TX",
@@ -40,6 +43,7 @@ const placeholderJobs = [
     apply_url: "https://example.com/apply",
   },
   {
+    id: 2646294,
     company: "TechCorp",
     title: "Senior Frontend Developer",
     location: "San Francisco, CA",
@@ -50,6 +54,7 @@ const placeholderJobs = [
     apply_url: "https://example.com/apply",
   },
   {
+    id: 2646230,
     company: "DataSystems Inc.",
     title: "Data Scientist",
     location: "New York, NY",
@@ -60,6 +65,7 @@ const placeholderJobs = [
     apply_url: "https://example.com/apply",
   },
   {
+    id: 1646234,
     company: "CloudNine Solutions",
     title: "DevOps Engineer",
     location: "Austin, TX",
