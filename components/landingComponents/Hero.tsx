@@ -4,7 +4,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 export const Hero = () => {
   return (
     <section className="w-[55%] h-[calc(100%-3.5rem)] flex flex-col items-center justify-center">
-      <Link href="/app/protected/page.tsx">
+      <Link href="/sign-up">
         <Badge />
       </Link>
 
