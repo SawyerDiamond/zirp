@@ -1,6 +1,4 @@
-import { createClient } from "@/utils/supabase/client";
-
-const supabase = createClient();
+import { supabase } from "@/utils/supabase/client";
 
 export async function signOut() {
   console.log("Starting sign out...");
