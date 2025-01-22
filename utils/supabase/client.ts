@@ -1,13 +1,10 @@
-import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("supabaseUrl and supabaseAnonKey must be provided.");
+  throw new Error("Supabase URL and anon key are required.");
 }
 
-export const createClient = () => {
-  return createSupabaseClient(supabaseUrl, supabaseAnonKey);
-};
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);

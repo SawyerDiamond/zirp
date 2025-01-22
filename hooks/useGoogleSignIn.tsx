@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { createClient } from "@/utils/supabase/client";
+import { supabase as supabaseClient } from "@/utils/supabase/client";
 
 export const useGoogleSignIn = () => {
   const [error, setError] = useState<string | null>(null);
-  const supabase = createClient();
+  const supabase = supabaseClient;
 
   const handleGoogleSignIn = async () => {
     const { error } = await supabase.auth.signInWithOAuth({

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata = {
   title: "Zirp",
   description: "The best way to score your dream internship.",
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="overflow-hidden h-screen">
         {children}
         <div className="flares w-full h-full -z-10"></div>
+        <SpeedInsights />
       </body>
     </html>
   );
