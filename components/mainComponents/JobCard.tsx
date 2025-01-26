@@ -1,14 +1,13 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ZirpLogoB } from "@/assets/ZirpLogo";
 import { JobItem } from "@/types/job";
 
 export function JobCard({ job }: { job: JobItem }) {
   return (
-    <Card className="card-shadow rounded-2xl bg-secondary border backdrop-blur border-secondary-border">
+    <Card className="card-shadow rounded-2xl bg-secondary border backdrop-blur border-secondary-border overflow-hidden">
       <CardHeader className="flex flex-row items-center gap-3">
-        <ZirpLogoB className="w-14 h-14" />
+        <img src={job.logo_url} className="w-12 h-12 rounded-xl" />
         <div>
-          <h3 className="text-lg font-semibold">{job.title}</h3>
+          <h3 className="text-lg font-semibold truncate">{job.title}</h3>
           <p className="text-sm text-muted-foreground">{job.company}</p>
         </div>
       </CardHeader>

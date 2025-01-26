@@ -3,20 +3,21 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { LocationSVG, SubmitSVG, JobSVG } from "@/assets/icons/";
-import type { JobItem } from "@/types/job";
-
-type SearchBoxProps = {
-  onSearch: (results: JobItem[]) => void;
-  className?: string;
-};
+import { SearchBoxProps } from "@/types/job";
 
 export function SearchBox({ onSearch, className }: SearchBoxProps) {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted with:", { jobTitle, location });
+    onSearch({ title: jobTitle, location });
+  };
+
   return (
-    <form className={`flex z-50 ${className}`}>
+    <form className={`flex z-50 ${className}`} onSubmit={handleSubmit}>
       <div className="flex items-center gap-4">
         <Input
           name="Search"
@@ -43,6 +44,7 @@ export function SearchBox({ onSearch, className }: SearchBoxProps) {
           }}
         />
         <Button
+          type="submit"
           size="squareSM"
           className="bg-primary-darker"
           disabled={isLoading}>

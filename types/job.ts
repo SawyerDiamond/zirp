@@ -1,5 +1,4 @@
 export interface JobItem {
-  id: number;
   title: string;
   company: string;
   location: string;
@@ -10,3 +9,8 @@ export interface JobItem {
   timestamp: string;
   apply_url: string;
 }
+
+export type SearchBoxProps = {
+  onSearch: (results: { title: string; location: string }) => void;
+  className?: string;
+};

@@ -1,47 +1,55 @@
-import { createClient } from "@supabase/supabase-js";
 import { JobItem } from "@/types/job";
-
-import fs from "fs";
-import puppeteer from "puppeteer";
-import cron from "node-cron";
 import slugify from "slugify";
-
+import * as puppeteer from "puppeteer";
 import dotenv from "dotenv";
+import { createSupabaseServerClient } from "../supabase/server";
+
 dotenv.config();
-const { SUPABASE_URL, SUPABASE_KEY, LOGO_API_TOKEN } = process.env;
+const { LOGO_API_TOKEN } = process.env;
 
-// if (!SUPABASE_URL || !SUPABASE_KEY || !LOGO_API_TOKEN) {
-//   throw new Error("Missing Supabase or Logo API credentials");
-// }
+const autoScroll = async (page: puppeteer.Page) => {
+  await page.evaluate(async () => {
+    const container = document.querySelector(
+      ".flex.h-screen.flex-col.gap-4.overflow-y-auto.p-4"
+    );
+    if (!container) return;
+    await new Promise<void>((resolve) => {
+      let totalHeight = 0;
+      const distance = 100;
+      const timer = setInterval(() => {
+        container.scrollBy(0, distance);
+        totalHeight += distance;
 
-// const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+        if (totalHeight >= container.scrollHeight) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 100);
+    });
+  });
+};
 
 const fetchCompanyLogo = async (companyName: string): Promise<string> => {
   const cleanName = companyName.replace(/\s+/g, "");
-
   const formattedName = slugify(cleanName, {
     lower: true,
     replacement: "",
     strict: true,
   });
 
-  return `https://img.logo.dev/${encodeURIComponent(formattedName)}.com?token=${LOGO_API_TOKEN}`;
+  return `https://cdn.brandfetch.io/${encodeURIComponent(formattedName)}.com?c=${LOGO_API_TOKEN}`;
 };
 
-const url =
-  "https://simplify.jobs/jobs?query=frontend%20&state=New%20York%2C%20USA&points=45.015865%3B-71.777491%3B40.477399%3B-79.76259&experience=Internship&education=Bachelor%27s&jobId=891a4c15-816a-4fbd-ae39-bf4c3b33d522";
-
-const simplifyJobs = async (url: string): Promise<JobItem[]> => {
+export const simplifyJobs = async (url: string): Promise<JobItem[]> => {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: "networkidle2" });
-
+  await autoScroll(page);
   await page.waitForSelector('[data-testid="job-card"]');
 
   const jobs: JobItem[] = await page.evaluate(() => {
     const jobElements = document.querySelectorAll('[data-testid="job-card"]');
     const jobsArray: any[] = [];
-
     const cleanSalary = (salary: string): string => {
       return salary.replace(/Hourly/g, "").trim();
     };
@@ -68,7 +76,6 @@ const simplifyJobs = async (url: string): Promise<JobItem[]> => {
         : "";
 
       jobsArray.push({
-        id: Math.floor(Math.random() * 1000000),
         title,
         company,
         location,
@@ -91,20 +98,14 @@ const simplifyJobs = async (url: string): Promise<JobItem[]> => {
     } catch (error) {
       job.logo_url = "";
     }
+
+    const supabase = await createSupabaseServerClient();
+    const { error } = await supabase.from("jobs").insert(job);
+    if (error) {
+      console.error(`Error inserting job ID ${job.title}:`, error.message);
+    }
   }
 
   await browser.close();
   return jobs;
 };
-
-const runScraper = async () => {
-  try {
-    const jobs = await simplifyJobs(url);
-    fs.writeFileSync("jobs.json", JSON.stringify(jobs, null, 2));
-    console.log(`Jobs from ${url} saved successfully to jobs.json.`);
-  } catch (error) {
-    console.error(`Error processing ${url}:`, error);
-  }
-};
-
-runScraper();

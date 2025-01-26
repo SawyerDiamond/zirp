@@ -2,11 +2,9 @@ import { SearchBox } from "@/components/mainComponents/SearchBox";
 import GradientBox from "@/components/GradientBox";
 import { BGLogo } from "@/assets/BGLogo";
 import { ZirpLogoB } from "@/assets/ZirpLogo";
-type TopBoxProps = {
-  onSearch: (results: any) => void;
-  className?: string;
-};
-export function TopBox({ onSearch, className }: TopBoxProps) {
+import { SearchBoxProps } from "@/types/job";
+
+export function TopBox({ onSearch, className }: SearchBoxProps) {
   return (
     <div className="relative w-full h-auto flex items-center ">
       <GradientBox className="w-full h-[30vh] rounded-3xl flex items-center">

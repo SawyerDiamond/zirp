@@ -4,92 +4,18 @@ import { TopBox } from "@/components/mainComponents/TopBox";
 import { Sidebar } from "@/components/mainComponents/Sidebar";
 import { JobItem } from "@/types/job";
 import { BGLogo } from "@/assets/BGLogo";
-
 import { JobCard } from "@/components/mainComponents/JobCard";
 import { FeaturedCard } from "@/components/mainComponents/FeaturedCard";
-
-const placeholderJobs = [
-  {
-    id: 2646234,
-    company: "TechCorp",
-    title: "Senior Frontend Developer",
-    location: "San Francisco, CA",
-    description:
-      "We're looking for an experienced frontend developer to join our team and help build amazing user interfaces.",
-    salary: "$120,000 - $150,000",
-    timestamp: new Date().toISOString(),
-    apply_url: "https://example.com/apply",
-  },
-  {
-    id: 2646534,
-    company: "DataSystems Inc.",
-    title: "Data Scientist",
-    location: "New York, NY",
-    description:
-      "Join our data science team to work on cutting-edge machine learning projects and drive business insights.",
-    salary: "$100,000 - $130,000",
-    timestamp: new Date().toISOString(),
-    apply_url: "https://example.com/apply",
-  },
-  {
-    id: 2647234,
-    company: "CloudNine Solutions",
-    title: "DevOps Engineer",
-    location: "Austin, TX",
-    description:
-      "Help us build and maintain our cloud infrastructure and streamline our deployment processes.",
-    salary: "$110,000 - $140,000",
-    timestamp: new Date().toISOString(),
-    apply_url: "https://example.com/apply",
-  },
-  {
-    id: 2646294,
-    company: "TechCorp",
-    title: "Senior Frontend Developer",
-    location: "San Francisco, CA",
-    description:
-      "We're looking for an experienced frontend developer to join our team and help build amazing user interfaces.",
-    salary: "$120,000 - $150,000",
-    timestamp: new Date().toISOString(),
-    apply_url: "https://example.com/apply",
-  },
-  {
-    id: 2646230,
-    company: "DataSystems Inc.",
-    title: "Data Scientist",
-    location: "New York, NY",
-    description:
-      "Join our data science team to work on cutting-edge machine learning projects and drive business insights.",
-    salary: "$100,000 - $130,000",
-    timestamp: new Date().toISOString(),
-    apply_url: "https://example.com/apply",
-  },
-  {
-    id: 1646234,
-    company: "CloudNine Solutions",
-    title: "DevOps Engineer",
-    location: "Austin, TX",
-    description:
-      "Help us build and maintain our cloud infrastructure and streamline our deployment processes.",
-    salary: "$110,000 - $140,000",
-    timestamp: new Date().toISOString(),
-    apply_url: "https://example.com/apply",
-  },
-];
+import { useJobSearch } from "@/hooks/useJobSearch";
 
 export function Home() {
   const [searchResults, setSearchResults] = useState<JobItem[]>([]);
 
-  const handleSearch = (results: JobItem[]) => {
-    console.log("handleSearch called with results:", results);
-    if (Array.isArray(results)) {
-      setSearchResults(results);
-      console.log(
-        `Updated searchResults state with ${results.length} placeholderJobs.`
-      );
-    } else {
-      console.error("Received unexpected results structure:", results);
-    }
+  const handleSearch = async (results: { title: string; location: string }) => {
+    console.log("handleSearch called with:", results);
+    const searchResults = await useJobSearch(results);
+    console.log("Search results received:", searchResults);
+    setSearchResults(searchResults);
   };
 
   return (
@@ -126,7 +52,7 @@ export function Home() {
           </div> */}
           <h3 className="text-2xl font-semibold pl-1">Recently Added</h3>
           <div className="grid grid-cols-2 gap-4 mb-5">
-            {placeholderJobs.map((job, index) => (
+            {searchResults.map((job, index) => (
               <JobCard key={index} job={job} />
             ))}
           </div>
