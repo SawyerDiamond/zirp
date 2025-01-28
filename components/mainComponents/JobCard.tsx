@@ -3,9 +3,9 @@ import { JobItem } from "@/types/job";
 
 export function JobCard({ job }: { job: JobItem }) {
   return (
-    <Card className="card-shadow rounded-2xl bg-secondary border backdrop-blur border-secondary-border overflow-hidden p-2">
+    <Card className="card-shadow rounded-2xl bg-primary border backdrop-blur border-secondary-border overflow-hidden">
       <CardHeader className="flex flex-row items-center gap-3">
-        <img src={job.logo_url} className="w-14 h-14 rounded-xl shadow-md" />
+        <img src={job.logo_url} className="w-12 h-12 rounded-xl shadow-md" />
         <div>
           <h3 className="text-lg font-semibold w-[30vw] truncate">
             {job.title}

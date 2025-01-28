@@ -170,6 +170,7 @@ const Auth = () => {
               pendingText={isSignUp ? "Signing up..." : "Signing in..."}>
               {isSignUp ? "Sign Up" : "Sign In"}
             </SubmitButton>
+
             <div className="flex flex-row gap-2">
               <Button
                 onClick={handleGoogleSignIn}
