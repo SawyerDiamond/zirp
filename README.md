@@ -1,4 +1,4 @@
-# ZIRP - Zero In on Rising Positions 🎯
+# ZIRP 🎯
 
 Your one-stop solution for finding student opportunities in tech! 🚀
 

@@ -3,17 +3,16 @@ import { JobItem } from "@/types/job";
 
 export function JobCard({ job }: { job: JobItem }) {
   return (
-    <Card className="card-shadow rounded-2xl bg-secondary border backdrop-blur border-secondary-border overflow-hidden">
+    <Card className="card-shadow rounded-2xl bg-secondary border backdrop-blur border-secondary-border overflow-hidden p-2">
       <CardHeader className="flex flex-row items-center gap-3">
-        <img src={job.logo_url} className="w-12 h-12 rounded-xl" />
+        <img src={job.logo_url} className="w-14 h-14 rounded-xl shadow-md" />
         <div>
-          <h3 className="text-lg font-semibold truncate">{job.title}</h3>
-          <p className="text-sm text-muted-foreground">{job.company}</p>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div className="grid gap-2">
+          <h3 className="text-lg font-semibold w-[30vw] truncate">
+            {job.title}
+          </h3>
+
           <div className="flex items-center gap-2">
+            <h4 className="text-sm text-muted-foreground">{job.company}</h4>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -47,9 +46,8 @@ export function JobCard({ job }: { job: JobItem }) {
             </svg>
             <span className="text-sm font-semibold">{job.salary}</span>
           </div>
-          <p className="text-sm">{job.description}</p>
         </div>
-      </CardContent>
+      </CardHeader>
     </Card>
   );
 }

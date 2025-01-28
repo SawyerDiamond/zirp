@@ -37,7 +37,7 @@ const fetchCompanyLogo = async (companyName: string): Promise<string> => {
     strict: true,
   });
 
-  return `https://cdn.brandfetch.io/${encodeURIComponent(formattedName)}.com?c=${LOGO_API_TOKEN}`;
+  return `https://cdn.brandfetch.io/${encodeURIComponent(formattedName)}.com/fallback/404/?c=${LOGO_API_TOKEN}`;
 };
 
 export const simplifyJobs = async (url: string): Promise<JobItem[]> => {
