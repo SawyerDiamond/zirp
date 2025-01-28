@@ -5,10 +5,9 @@ import { Sidebar } from "@/components/mainComponents/Sidebar";
 import { JobItem } from "@/types/job";
 import { BGLogo } from "@/assets/BGLogo";
 import { JobCard } from "@/components/mainComponents/JobCard";
-import Spinner from "@/components/spinner";
-import { FeaturedCard } from "@/components/mainComponents/FeaturedCard";
+import Spinner from "@/components/Spinner";
+
 import { useJobSearch } from "@/hooks/useJobSearch";
-import { ZirpLogoB, ZirpLogo } from "@/assets/ZirpLogo";
 
 export function Home() {
   const [searchResults, setSearchResults] = useState<JobItem[]>([]);
