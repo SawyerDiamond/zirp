@@ -60,12 +60,13 @@ export function Home() {
             />
           </div> */}
           <h3 className="text-2xl font-semibold pl-1 pt-2">Recently Added</h3>
-          <Spinner />
+
           <div className="grid grid-cols-2 gap-4 mb-5">
             {searchResults.map((job, index) => (
               <JobCard key={index} job={job} />
             ))}
           </div>
+          <Spinner />
         </div>
       </div>
     </div>

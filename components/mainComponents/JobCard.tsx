@@ -5,7 +5,14 @@ export function JobCard({ job }: { job: JobItem }) {
   return (
     <Card className="card-shadow rounded-2xl bg-primary border backdrop-blur border-secondary-border overflow-hidden">
       <CardHeader className="flex flex-row items-center gap-3">
-        <img src={job.logo_url} className="w-12 h-12 rounded-xl shadow-md" />
+        <img
+          src={job.logo_url}
+          onError={(e) => {
+            const randomLogo = `/icons/logos/logo-${Math.floor(Math.random() * 8) + 1}.svg`;
+            e.currentTarget.src = randomLogo;
+          }}
+          className="w-12 h-12 rounded-xl shadow-md"
+        />
         <div>
           <h3 className="text-lg font-semibold w-[30vw] truncate">
             {job.title}
