@@ -3,7 +3,7 @@ import { JobItem } from "@/types/job";
 
 export function JobCard({ job }: { job: JobItem }) {
   return (
-    <Card className="card-shadow rounded-2xl bg-primary border backdrop-blur border-secondary-border overflow-hidden">
+    <Card className="card-shadow rounded-2xl bg-primary-darker border backdrop-blur border-secondary-border overflow-hidden">
       <CardHeader className="flex flex-row items-center gap-3">
         <img
           src={job.logo_url}

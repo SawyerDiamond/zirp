@@ -1,6 +1,6 @@
 import cron from "node-cron";
-import { simplifyJobs } from "@/utils/scraper/index";
-import { simplifyUrl } from "./urls";
+import { workdayJobs } from "@/utils/scraper/index";
+import { workdayURLs } from "./urls";
 import fs from "fs";
 import dotenv from "dotenv";
 
@@ -8,11 +8,11 @@ dotenv.config();
 
 const runScraper = async () => {
   try {
-    const jobs = await simplifyJobs(simplifyUrl);
+    const jobs = await workdayJobs(workdayURLs);
     fs.writeFileSync("jobs.json", JSON.stringify(jobs, null, 2));
-    console.log(`Jobs from ${simplifyUrl} saved successfully to jobs.json.`);
+    console.log(`Jobs from ${workdayURLs} saved successfully to jobs.json.`);
   } catch (error) {
-    console.error(`Error processing ${simplifyUrl}:`, error);
+    console.error(`Error processing ${workdayURLs}:`, error);
   }
 };
 

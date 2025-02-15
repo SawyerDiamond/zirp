@@ -8,6 +8,7 @@ import { JobCard } from "@/components/mainComponents/JobCard";
 import Spinner from "@/components/Spinner";
 
 import { useJobSearch } from "@/hooks/useJobSearch";
+import { Particles } from "@tsparticles/engine";
 
 export function Home() {
   const [searchResults, setSearchResults] = useState<JobItem[]>([]);
@@ -24,14 +25,8 @@ export function Home() {
       <TopBox onSearch={handleSearch} />
       <div className="flex gap-4 flex-row">
         <Sidebar />
-        <div className="flex flex-col w-full gap-4 overflow-y-auto max-h-[63.5vh] bg-secondary border border-secondary-border backdrop-blur-sm rounded-2xl p-6">
-          <div className="h-full overflow-hidden fixed -top-40 -left-56">
-            <BGLogo
-              fillColor="#030a17"
-              className="absolute -z-10  opacity-50"
-            />
-          </div>
-
+        <div className="max-h-[63.5vh] absolute"></div>
+        <div className="flex flex-col w-full gap-4 overflow-y-auto max-h-[63.5vh] bg-secondary border border-secondary-border backdrop-blur rounded-2xl p-6">
           {/* <div className="flex flex-row gap-4">
             <FeaturedCard
               featureName="Big Tech"
