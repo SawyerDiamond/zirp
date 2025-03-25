@@ -8,14 +8,9 @@ dotenv.config();
 const { LOGO_API_TOKEN } = process.env;
 
 const fetchCompanyLogo = async (companyName: string): Promise<string> => {
-  const cleanName = companyName.replace(/\s+/g, "");
-  const formattedName = slugify(cleanName, {
-    lower: true,
-    replacement: "",
-    strict: true,
-  });
-
-  return `https://cdn.brandfetch.io/${encodeURIComponent(formattedName)}.com/fallback/404/?c=${LOGO_API_TOKEN}`;
+  // Return a local fallback logo instead of using the Brandfetch API
+  const randomLogoNumber = Math.floor(Math.random() * 8) + 1;
+  return `/icons/logos/logo-${randomLogoNumber}.svg`;
 };
 
 export const workdayJobs = async (urls: string[]): Promise<JobItem[]> => {

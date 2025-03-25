@@ -3,20 +3,32 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { CogSVG } from "@/assets/icons";
 import { Button } from "@/components/ui/button";
+import { CogSVG } from "@/assets/icons";
 
-export function Filters() {
+type FiltersProps = {
+  isActive: boolean;
+  onClick: () => void;
+};
+
+export function Filters({ isActive, onClick }: FiltersProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <CogSVG className="h-5 w-5" />
-          <span className="sr-only">Settings</span>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={onClick}
+          className={`transition-all ${
+            isActive
+              ? "bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800"
+              : ""
+          }`}>
+          <CogSVG className={`h-5 w-5 ${isActive ? "text-white" : ""}`} />
+          <span className="sr-only">Filters</span>
         </Button>
       </TooltipTrigger>
-      <TooltipContent side="right">Settings</TooltipContent>
+      <TooltipContent side="right">Filters</TooltipContent>
     </Tooltip>
   );
 }

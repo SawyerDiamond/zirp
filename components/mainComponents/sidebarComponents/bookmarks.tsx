@@ -15,8 +15,16 @@ export function Bookmarks({ isActive, onClick }: BookmarksProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="ghost" size="icon" onClick={onClick}>
-          <BookmarksSVG className="h-5 w-5" />
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={onClick}
+          className={`transition-all ${
+            isActive
+              ? "bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800"
+              : ""
+          }`}>
+          <BookmarksSVG className={`h-5 w-5 ${isActive ? "text-white" : ""}`} />
           <span className="sr-only">Bookmarks</span>
         </Button>
       </TooltipTrigger>

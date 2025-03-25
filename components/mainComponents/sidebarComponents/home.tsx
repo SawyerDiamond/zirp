@@ -18,13 +18,13 @@ export function Home({ isActive, onClick }: HomeProps) {
         <Button
           variant="ghost"
           size="icon"
-          className={
+          onClick={onClick}
+          className={`transition-all ${
             isActive
-              ? "relative after:content-[''] after:absolute after:top-[-4px] after:left-[-4px] after:right-[-4px] after:bottom-[-4px] after:border-2 after:border-[var(--primary)] after:rounded-md after:z-[-1]"
+              ? "bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800"
               : ""
-          }
-          onClick={onClick}>
-          <HomeSVG className="h-5 w-5" />
+          }`}>
+          <HomeSVG className={`h-5 w-5 ${isActive ? "text-white" : ""}`} />
           <span className="sr-only">Home</span>
         </Button>
       </TooltipTrigger>

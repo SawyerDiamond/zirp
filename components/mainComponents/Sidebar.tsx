@@ -11,8 +11,19 @@ import SignOutButton from "@/components/mainComponents/SignOutButton";
 
 type SidebarProps = {
   className?: string;
+  onToggleBookmarks: () => void;
+  onToggleFilters: () => void;
+  isBookmarksActive: boolean;
+  isFiltersActive: boolean;
 };
-export function Sidebar({ className }: SidebarProps) {
+
+export function Sidebar({
+  className,
+  onToggleBookmarks,
+  onToggleFilters,
+  isBookmarksActive,
+  isFiltersActive,
+}: SidebarProps) {
   const { isActivePage, handleNavigation } = useSidebarNavigation();
 
   return (
@@ -20,14 +31,20 @@ export function Sidebar({ className }: SidebarProps) {
       <div className="flex flex-col items-center mt-4 gap-6">
         <TooltipProvider>
           <Home
-            isActive={isActivePage("Dashboard")}
-            onClick={() => handleNavigation("Dashboard", "/")}
+            isActive={
+              isActivePage("Dashboard") &&
+              !isBookmarksActive &&
+              !isFiltersActive
+            }
+            onClick={() => {
+              handleNavigation("Dashboard", "/");
+              // Reset active states
+              if (isBookmarksActive) onToggleBookmarks();
+              if (isFiltersActive) onToggleFilters();
+            }}
           />
-          <Bookmarks
-            isActive={isActivePage("Bookmarks")}
-            onClick={() => handleNavigation("Bookmarks", "/bookmarks")}
-          />
-          <Filters />
+          <Bookmarks isActive={isBookmarksActive} onClick={onToggleBookmarks} />
+          <Filters isActive={isFiltersActive} onClick={onToggleFilters} />
         </TooltipProvider>
       </div>
 
